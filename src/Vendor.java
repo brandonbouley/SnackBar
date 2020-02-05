@@ -1,4 +1,4 @@
-/**
+/** brandon bouley 3B :DD
  * This class implements a vendor that sells one kind
  * of items. A vendor carries out sales transactions.
  */
@@ -9,6 +9,8 @@ public class Vendor
     private int stock;
     private int deposit;
     private int change;
+    private static double totalSales=0;
+
 
 
 
@@ -75,6 +77,7 @@ public class Vendor
             }
             stock--;
             change=ch;
+            totalSales+=(this.price/100.00);
             return true;
 
         }
@@ -95,6 +98,11 @@ public class Vendor
        int temp=change;
        change=0;
        deposit=0;
+       return temp;
+    }
+    public static double getTotalSales(){
+       double temp=totalSales;
+       totalSales=0;
        return temp;
     }
 }
